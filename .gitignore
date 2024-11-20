@@ -1,3 +1,7 @@
+# Logs
+logs
+*.log
+
 # Compiler files
 cache/
 out/
@@ -7,8 +11,16 @@ out/
 /broadcast/*/31337/
 /broadcast/**/dry-run/
 
-# Docs
-docs/
+# Dependency directories
+node_modules/
 
-# Dotenv file
+# Dotenv environnement variable files
 .env
+.env.test
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
+# Output of 'npm pack'
+*.tgz
