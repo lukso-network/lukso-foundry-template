@@ -1,16 +1,29 @@
 [profile.default]
 evm_version = "cancun"
 optimizer = true
-optimizer_runs = 10_000_000
+optimizer_runs = 1_000_000
 solc_version = "0.8.26"
 verbosity = 3
 src = "src"
 out = "out"
 libs = ["lib", "node_modules"]
 
+[fuzz] # Fuzzing configurations increased for more thorough testing
+runs = 20000
+dictionnary_weight = 60
+include_storage = true
+include_push_bytes = true
+show_logs = true
+
+[invariant] # Invariant configurations increased for more thorough testing
+runs = 20000
+call_override = true # useful for reentrancy checks
+dictionnary_weight = 80 # this is the default value
+
 [profile.ci]
-fuzz = { runs = 5000 }
-invariant = { runs = 1000 }
+fuzz = { runs = 200000, dictionnary_weight = 100, include_storage = true, include_push_bytes = true, show_logs = true }
+invariant = { runs = 200000, depth = 5000, call_override = true, dictionnary_weight = 100, include_storage = true, include_push_bytes = true }
+
 
 [fmt]
 bracket_spacing = false
