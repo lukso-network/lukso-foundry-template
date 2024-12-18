@@ -73,18 +73,33 @@ forge snapshot
 ```shell
 $ anvil
 ```
+-->
 
-### Deploy
+### Deploy + verify contracts
+
+The folder `script/` provide a script to deploy contracts. 
+
+1. Create a `.env` file, copy-paste inside the content of [`.env.example`](./.env.example)  and add your private key you will use to deploy.
+
+2. Run the following commands to deploy
 
 ```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+# load the variables from the .env file
+source .env
+
+# Deploy and verify contract on LUKSO Testnet.
+forge script --chain 4201 script/deploy.s.sol:DeployScript --rpc-url $LUKSO_TESTNET_RPC_URL --broadcast --verify --verifier blockscout --verifier-url $BLOCKSCOUT_TESTNET_API_URL -vvvv
+
+# Deploy and verify contract on LUKSO Mainnet.
+forge script --chain 42 script/deploy.s.sol:DeployScript --rpc-url $LUKSO_MAINNET_RPC_URL --broadcast --verify --verifier blockscout --verifier-url $BLOCKSCOUT_MAINNET_API_URL -vvvv
 ```
 
-### Cast
+<!-- ### Cast
 
 ```shell
 $ cast <subcommand>
-``` -->
+``` 
+-->
 
 ### Help
 
