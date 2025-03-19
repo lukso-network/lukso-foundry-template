@@ -16,15 +16,10 @@ contract ExampleLSP7Token is LSP7, LSP7Burnable {
         string memory name,
         string memory symbol,
         address contractOwner,
-        bool isNonDivisible // whether the token should be divisible (18 decimals) or not (0 decimals)
+        bool isNonDivisible // whether the token should be divisible (18 decimals) or not (0
     )
-        LSP7(
-            name,
-            symbol,
-            contractOwner,
-            _LSP4_TOKEN_TYPE_TOKEN,
-            isNonDivisible
-        )
+        // decimals)
+        LSP7(name, symbol, contractOwner, _LSP4_TOKEN_TYPE_TOKEN, isNonDivisible)
     {
         // mint all the tokens to the deployer, who can then distribute them using `transfer(...)`
         _mint(msg.sender, 10_000_000 * 10 ** decimals(), true, "0x");
