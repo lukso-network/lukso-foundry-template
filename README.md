@@ -23,6 +23,7 @@ git clone https://github.com/lukso-network/lukso-foundry-template
 3. Install the dependencies
 
 ```bash
+forge install
 bun install
 ```
 
