@@ -19,10 +19,16 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Setup bun 🥯
+        uses: oven-sh/setup-bun@v2
+
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
         with:
           version: nightly
+
+      - name: Install Dependencies
+        run: bun install
 
       - name: Show Forge version
         run: |
