@@ -2,7 +2,7 @@
 evm_version = "cancun"
 optimizer = true
 optimizer_runs = 1_000_000
-solc_version = "0.8.26"
+solc_version = "0.8.30"
 verbosity = 3
 src = "src"
 out = "out"
@@ -17,13 +17,18 @@ show_logs = true
 
 [invariant] # Invariant configurations increased for more thorough testing
 runs = 20000
-call_override = true # useful for reentrancy checks
+call_override = true    # useful for reentrancy checks
 dictionnary_weight = 80 # this is the default value
 
 [profile.ci]
 fuzz = { runs = 200000, dictionnary_weight = 100, include_storage = true, include_push_bytes = true, show_logs = true }
 invariant = { runs = 200000, depth = 5000, call_override = true, dictionnary_weight = 100, include_storage = true, include_push_bytes = true }
 
+[profile.lite]
+fuzz = { runs = 50 }
+invariant = { runs = 10 }
+# Speed up compilation and tests during development.
+optimizer = false
 
 [fmt]
 bracket_spacing = false
