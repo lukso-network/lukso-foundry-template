@@ -2,7 +2,7 @@
 
 Forge/Foundry project template to get started developing contracts from [`@lukso/lsp-smart-contracts`](https://github.com/lukso-network/lsp-smart-contracts).
 
-Click the **"Use this template"** button from this repo's home page to create a repository based on this template.
+
 
 ## Overview
 
@@ -10,17 +10,13 @@ Click the **"Use this template"** button from this repo's home page to create a 
 
 ## Getting started
 
+1. Click the **"Use this template"** button from this repo's home page to create a repository based on this template.
+
 1. **Pre-requisites**:
    - Install the [**`bun`** package manager](https://bun.sh/package-manager).
-   - [Install foundry](https://book.getfoundry.sh/getting-started/installation.html).
+   - [Install foundry](https://getfoundry.sh/).
 
-2. clone the repository
-
-```bash
-git clone https://github.com/lukso-network/lukso-foundry-template
-```
-
-3. Install the dependencies
+2. Install the dependencies
 
 ```bash
 forge install
