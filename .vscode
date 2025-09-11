@@ -1,9 +1,0 @@
-{ 
-    "solidity.packageDefaultDependenciesContractsDirectory": "src", 
-    "solidity.packageDefaultDependenciesDirectory": "lib",
-    "solidity.compileUsingRemoteVersion": "v0.8.15", 
-    "solidity.remappings": [ 
-        "forge-std/=lib/forge-std/src/", 
-        "@=node_modules/@"
-    ] 
-} 
